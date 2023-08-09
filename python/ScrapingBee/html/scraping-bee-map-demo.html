@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScarpingBee MAP Demo</title>
+  <style type="text/css">
+      body {
+        font-family: sans-serif;
+        background-color: #333;
+      }
+
+      .product-container {
+        width: 480px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .pricebox {
+        font-size: 2.5em;
+        color: #090;
+        margin: 10px 0px 10px 0px;
+        text-align: center;
+      }
+
+      button {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+  </style>
+
+  <script type="text/javascript">
+    function updatePrice(){
+      // prices = [70, 59]
+      prices = prices = [70, 51, 62, 53, 64, 55, 66, 57, 68, 59]
+      index = new Date().getMinutes() % 10;   // index based on the last-digit of the minute
+      document.getElementById("map1").innerHTML = prices[index];
+    }
+    // window.onload = setInterval(updatePrice, 30*1000);     // change price every minute for testing
+  </script>
+
+</head>
+<body>
+<div class="product-container">
+  <img src="./cosmetics-box.jpg" alt="Natural Cosmetics">
+  <h1>Natural Cosmetics</h1>
+  <p>
+    Natural Cosmetics are made with high-quality, natural ingredients that are gentle on the skin.
+    They are perfect for anyone looking for a healthy and ethical beauty routine.
+  </p>
+
+  <div class="pricebox">
+    $<span id="map1"><script type="text/javascript">updatePrice();</script></span>
+  </div>
+
+  <p align="center">
+    <button onClick="javascript:alert('Only for demo!');">Add to Cart</button>
+  </p>
+</div>
+</body>
+</html>

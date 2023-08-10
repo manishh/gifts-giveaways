@@ -5,10 +5,10 @@
 pip install -r requirements.txt
 ```
 
-- Register on ScrapingBee website and add the API Key.
+- Register on ScrapingBee website and copy the API Key.
 > [https://app.scrapingbee.com/account/register](https://app.scrapingbee.com/account/register)
 
-- Rename `env.example` file as `.env` and paste the API key there.
+- Rename `env.example` file as `.env` and add the API key there.
 
 - Run the python script -
 ```

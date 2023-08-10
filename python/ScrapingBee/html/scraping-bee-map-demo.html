@@ -50,8 +50,7 @@
 
   <script type="text/javascript">
     function updatePrice(){
-      // prices = [70, 59]
-      prices = prices = [70, 51, 62, 53, 64, 55, 66, 57, 68, 59]
+      prices = [100, 91, 102, 93, 104, 95, 106, 97, 108, 99];
       index = new Date().getMinutes() % 10;   // index based on the last-digit of the minute
       document.getElementById("map1").innerHTML = prices[index];
     }
@@ -61,10 +60,10 @@
 </head>
 <body>
 <div class="product-container">
-  <img src="./cosmetics-box.jpg" alt="Natural Cosmetics">
-  <h1>Natural Cosmetics</h1>
+  <img src="./cosmetic.jpg" alt="Natural Cosmetics" title="Dummy Cosmetic Product">
+  <h1>Premium Cosmetics</h1>
   <p>
-    Natural Cosmetics are made with high-quality, natural ingredients that are gentle on the skin.
+    Premium Cosmetics are made with high-quality, natural ingredients that are gentle on the skin.
     They are perfect for anyone looking for a healthy and ethical beauty routine.
   </p>
 

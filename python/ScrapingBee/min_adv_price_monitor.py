@@ -93,6 +93,7 @@ $
 if __name__ == '__main__':
     monitor_url = "https://reclusivecoder.com/spb/scraping-bee-map-demo.html"
     price_element = "#map1"
+
     map_monitor = MAPMonitor(100)   # Minimum advertised price (MAP)
     # map_monitor.check_current_price(monitor_url, price_element)
 
@@ -101,5 +102,5 @@ if __name__ == '__main__':
     sch = sched.scheduler()
     sch.enter(5, 1, map_monitor.check_current_price, argument=(monitor_url, price_element))
     sch.enter(65, 1, map_monitor.check_current_price, argument=(monitor_url, price_element))
-    sch.run()  # blocking call
+    sch.run()  # blocking call, wait!
     logging.info("Finished!")

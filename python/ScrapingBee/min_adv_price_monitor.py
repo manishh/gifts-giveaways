@@ -84,7 +84,6 @@ class MAPMonitor:
 $ python min_adv_price_monitor.py
 2023-08-14 10:00:03,941 INFO: Monitoring for MAP threshold: $100
 2023-08-14 10:00:08,942 INFO: Checking current price...
-2023-08-14 10:00:23,029 INFO: ----->> Ignoring price above MAP: $100.
 2023-08-14 10:01:08,968 INFO: Checking current price...
 2023-08-14 10:01:25,006 WARNING: ----->> ALERT: Current retailer price is *below* MAP: $91!
 2023-08-14 10:01:25,010 INFO: Finished!
@@ -94,8 +93,8 @@ $
 if __name__ == '__main__':
     monitor_url = "https://reclusivecoder.com/spb/scraping-bee-map-demo.html"
     price_element = "#map1"
-    map_monitor = MAPMonitor(100)   # Minimum advertised price (MAP)
 
+    map_monitor = MAPMonitor(100)   # Minimum advertised price (MAP)
     # map_monitor.check_current_price(monitor_url, price_element)
 
     # schedule 2 scraping calls 1-minute apart for MAP-Alert demo.
@@ -103,5 +102,5 @@ if __name__ == '__main__':
     sch = sched.scheduler()
     sch.enter(5, 1, map_monitor.check_current_price, argument=(monitor_url, price_element))
     sch.enter(65, 1, map_monitor.check_current_price, argument=(monitor_url, price_element))
-    sch.run()  # blocking call
+    sch.run()  # blocking call, wait!
     logging.info("Finished!")

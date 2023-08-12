@@ -41,7 +41,7 @@ class MAPMonitor:
         if self.client and url:
             logging.info("Checking current price...")
             response = self.client.get(url, params={"wait": 100, "extract_rules": {"price": f"{extract_id}"}})
-            # logging.debug(f"Resp: {response.content}")
+            # logging.info(f"Resp: {response.content}")
 
             if response.ok:
                 self._process_price(response.content.decode("utf-8"))

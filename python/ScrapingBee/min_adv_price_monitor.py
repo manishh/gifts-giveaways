@@ -75,7 +75,7 @@ class MAPMonitor:
         :param current_price: The retrieved current price from the web page
         """
 
-        # send appropriate below-MAP alert via email/SMS etc.
+        # send appropriate below-MAP alerts via email/SMS etc.
         logging.warning(f"----->> ALERT: Current retailer price is *below* MAP: ${current_price}!")
 
 

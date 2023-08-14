@@ -79,7 +79,7 @@ class MAPMonitor:
         logging.warning(f"----->> ALERT: Current retailer price is *below* MAP: ${current_price}!")
 
 
-# Sample output
+# Sample output, set logging level to `logging.DEBUG` to see debug logs
 """
 $ python min_adv_price_monitor.py
 2023-08-14 10:00:03,941 INFO: Monitoring for MAP threshold: $100

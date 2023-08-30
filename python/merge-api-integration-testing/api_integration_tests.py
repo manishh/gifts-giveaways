@@ -54,7 +54,7 @@ def get_product_availability(zipcode: int) -> bool:
 class TestAPIIntegrations(unittest.TestCase):
 
     def test_get_converted_price(self):
-        test_data = {"date": "2023-08-28", "inr": 82.6}
+        test_data = {"date": "2023-09-01", "inr": 82.6}
         expected_price = 8260
         with requests_mock.Mocker() as mock:
             mock.get("https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd/inr.json", json=test_data)

@@ -3,7 +3,7 @@ import requests
 import requests_mock
 
 """
-The code here integrate two APIs: 
+The code here integrates two public APIs: 
 - For currency conversion: https://github.com/fawazahmed0/currency-api#readme 
 - For US zipcode information: https://api.zippopotam.us/
 

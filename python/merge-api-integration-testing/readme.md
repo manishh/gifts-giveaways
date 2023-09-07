@@ -8,7 +8,7 @@ Clone the repository and follow these steps to run the API Integration tests.
 
 ### 1. Install the Required Libraries
 
-You may wish to create a new [virtual environment](https://docs.python.org/3/library/venv.html) and activate it before installing the dependecies.
+You may wish to create a new [virtual environment](https://docs.python.org/3/library/venv.html) and activate it before installing the dependencies.
 
 You can install the dependencies with pip:
 

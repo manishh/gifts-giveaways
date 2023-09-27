@@ -1,3 +1,5 @@
+> ## Please run this test app before purchasing **[Portfolio Maker Pro](https://manishh.gumroad.com/l/portfolio-maker-pro).**
+
 ## Prerequisites
 
 ### Linux/Ubuntu (20.04 LTS or higher)

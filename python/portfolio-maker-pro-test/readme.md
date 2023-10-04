@@ -2,6 +2,10 @@
 
 ## Prerequisites
 
+### MacOS (10.14/Mojave or higher)
+
+- Python 3.9 or higher.
+
 ### Linux/Ubuntu (20.04 LTS or higher)
 
 - Python 3.9 or higher.
@@ -11,9 +15,7 @@
 sudo apt install python3-tk
 ```
 
-### MacOS (10.14/Mojave or higher)
-
-- Python 3.9 or higher.
+### Portfolio Maker Pro is _NOT_ available for Windows.
 
 ## Test: Portfolio Maker Pro
 

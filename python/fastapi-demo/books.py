@@ -1,3 +1,4 @@
+# Thanks to https://gist.github.com/nanotaboada/6396437
 books_lst = [
     {
         "isbn":"9781593279509",
@@ -56,13 +57,13 @@ books_lst = [
     },
     {
         "isbn":"9798602477429",
-        "title":"You Don't Know JS Yet",
+        "title":"You Don&apos;t Know JS Yet",
         "subtitle":"Get Started",
         "author":"Kyle Simpson",
         "published":"2020-01-28T00:00:00.000Z",
         "publisher":"Independently published",
         "pages":143,
-        "description":"The worldwide best selling You Don't Know JS book series is back for a 2nd edition: You Don't Know JS Yet. All 6 books are brand new, rewritten to cover all sides of JS for 2020 and beyond.",
+        "description":"The worldwide best selling You Don&apos;t Know JS book series is back for a 2nd edition: You Don&apos;t Know JS Yet. All 6 books are brand new, rewritten to cover all sides of JS for 2020 and beyond.",
         "website":"https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed/get-started"
     },
     {

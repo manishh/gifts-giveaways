@@ -7,9 +7,6 @@ import uplink
 import urllib3
 import aiohttp
 
-# from hyper.contrib import HTTP20Adapter
-# from hyper.http20.response import HTTP20Response
-
 
 # demonstrates `requests` library
 def demo_requests():
@@ -32,7 +29,7 @@ def demo_requests_streaming():
 # demonstrates `urllib3` library
 def demo_urllib3():
     print("Testing `urllib3` library...")
-    http = urllib3.PoolManager()    # Create a PoolManager instance
+    http = urllib3.PoolManager()    # PoolManager for connection pooling
     resp = http.request('GET', 'https://httpbin.org/get', fields={"foo": "bar"})
 
     if resp.status == 200:     # success
@@ -44,7 +41,7 @@ def demo_urllib3():
 # demonstrates `urllib3` library's stream rsponse
 def demo_urllib3_streaming():
     print("Testing `urllib3` library's streaming response...")
-    http = urllib3.PoolManager()    # Create a PoolManager instance
+    http = urllib3.PoolManager()    # PoolManager for connection pooling
 
     # Streaming response
     with http.request('GET', 'https://httpbin.org/stream/10', preload_content=False) as streaming_resp:
@@ -106,24 +103,6 @@ def demo_grequests_long():
             print(f"Error fetching data from {response.url}: {response.status_code}")
 
 
-# demonstrate `requests` for HTTP/2 with hyper
-# def demo_requests_http2():
-#     print("Testing `requests` library for HTTP/2 with `hyper`...")
-#
-#     # Mount the HTTP/2 adapter
-#     session = requests.Session()
-#     session.mount('https://', HTTP20Adapter())
-#     resp = session.get("https://http2.github.io/")
-#
-#     # Check if HTTP/2 was used
-#     if isinstance(resp.raw, HTTP20Response):
-#         print("HTTP/2 was used for the request.")
-#     else:
-#         print("HTTP/2 was NOT used for the request.")
-
-
-# demonstrate `httpx`
-
 # demonstrates `httpx`
 async def fetch_posts():
     async with httpx.AsyncClient() as client:
@@ -140,14 +119,14 @@ async def demo_httpx():
 
 def demo_httpx_misc():
     print("Testing `httpx` library for HTTP/2...")
-    # client = httpx.Client(http2=True)
-    # resp = client.get("https://http2.github.io/")
-    # print(resp.headers)
+    client = httpx.Client(http2=True)
+    resp = client.get("https://http2.github.io/")
+    print(resp.headers)
 
     print("Testing `httpx` library for streaming...")
-    with httpx.stream("GET", "https://httpbin.org/stream/10") as r:
-       for text in r.iter_text():
-           print(text)
+    with httpx.stream("GET", "https://httpbin.org/stream/10") as resp:
+        for text in resp.iter_text():
+            print(text)
 
 
 # demonstrate `aiohttp`
@@ -158,6 +137,7 @@ async def fetch_data(url):
 
 
 async def demo_aiohttp():
+    print("Testing `aiohttp` library...")
     urls = [
         'https://www.python.org/',
         'http://httpbin.org/get',
@@ -166,13 +146,14 @@ async def demo_aiohttp():
     tasks = [fetch_data(url) for url in urls]
     responses = await asyncio.gather(*tasks)
     for resp_text in responses:
-        # Process the scraped data
         print(f"Response code: {resp_text}")
 
 
 if __name__ == "__main__":
+    # uncomment the function that you want to test
+
     # demo_requests()
-    demo_requests_streaming()
+    # demo_requests_streaming()
     # demo_urllib3()
     # demo_urllib3_streaming()
     # demo_uplink()
@@ -180,4 +161,4 @@ if __name__ == "__main__":
     # demo_requests_http2()
     # asyncio.run(demo_httpx())
     # demo_httpx_misc()
-    # asyncio.run(demo_aiohttp())
+    asyncio.run(demo_aiohttp())

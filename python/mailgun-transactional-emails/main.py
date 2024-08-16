@@ -58,8 +58,8 @@ def register_user(user_name: str, user_email: str):
 
     # actual code to register the user
 
+    logging.info(f"Sending registration email to the user: {user_name}...")
     _notify_registration(user_name, user_email)
-    logging.info(f"Registration email sent to the user: {user_name}.")
 
 
 def _notify_subscription(user_name: str, user_email: str):
@@ -87,8 +87,8 @@ def subscribe_user(user_name: str, user_email: str):
     """
 
     # code to subscribe user with pending confirmation
+    logging.info(f"Sending subscription confirmation email to the user: {user_name}...")
     _notify_subscription(user_name, user_email)
-    logging.info(f"Subscription confirmation email sent to the user: {user_name}.")
 
 
 def _notify_password_reset(user_name: str, user_email: str):
@@ -116,8 +116,8 @@ def reset_user_password(user_name: str, user_email: str):
     """
 
     # Password reset code for the user
+    logging.info(f"Sending password reset email to the user: {user_name}...")
     _notify_password_reset(user_name, user_email)
-    logging.info(f"Password reset email sent to the user: {user_name}.")
 
 
 # Demo of automated transactional emails

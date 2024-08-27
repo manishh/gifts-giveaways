@@ -5,11 +5,11 @@ import os
 from dotenv import load_dotenv
 
 logging.basicConfig(level=logging.INFO)  # set log level
-load_dotenv()  # for reading API key from `.env` file.
+load_dotenv()  # For reading the API key from the `.env` file
 
 # Sandbox API URL format: https://api.mailgun.net/v3/sandbox<ID>.mailgun.org/messages
 MAILGUN_API_URL = "https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages"
-FROM_EMAIL_ADDRESS = "Sender Name <SENDER_EMAIL_ID>"    # your domain, or Mailgun sandbox
+FROM_EMAIL_ADDRESS = "Sender Name <SENDER_EMAIL_ID>"
 
 
 def _send_email(to_address: str, subject: str, message: str):
@@ -21,7 +21,7 @@ def _send_email(to_address: str, subject: str, message: str):
     :param message:
     """
     try:
-        api_key = os.getenv("MAILGUN_API_KEY")  # get API-Key from the `.env` file
+        api_key = os.getenv("MAILGUN_API_KEY")  # Get API-Key from the `.env` file
 
         resp = requests.post(MAILGUN_API_URL, auth=("api", api_key),
                              data={"from": FROM_EMAIL_ADDRESS,

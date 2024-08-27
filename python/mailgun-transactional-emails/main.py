@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 
 logging.basicConfig(level=logging.INFO)  # set log level
-load_dotenv()  # For reading API key from `.env` file.
+load_dotenv()  # For reading the API key from the `.env` file
 
 # Sandbox API URL format: https://api.mailgun.net/v3/sandbox<ID>.mailgun.org/messages
 MAILGUN_API_URL = "https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages"

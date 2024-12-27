@@ -9,7 +9,7 @@ def produce_orders():
     producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
     print("Creating sample input orders...")
     # Use higher number to observe streaming application demo better
-    for i in range(1, 11):
+    for i in range(1, 11):  # Use higher number for longer demo.
         message = f"Order #{i}"
         producer.send(input_topic, message.encode())
         print(f"Produced: {message}")

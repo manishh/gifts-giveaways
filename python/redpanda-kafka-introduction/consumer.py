@@ -16,8 +16,7 @@ consumer = KafkaConsumer(
 try:  
     print("Consumer reading messages...")  
     for message in consumer:  
-        print(f"\t{message.topic}: {message.partition}:{message.offset}: key={message.key} value={message.value}")
-        
+        print(f"\t{message.topic}: {message.partition}:{message.offset}: key={message.key} value={message.value}")      
 except KeyboardInterrupt:  
     print("Consumer exit.")  
     sys.exit()  

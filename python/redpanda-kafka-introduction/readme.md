@@ -53,4 +53,5 @@ Follow these steps to run the Kafka Streaming Application demo:
 
 ---
 
+
 > **Kafka Demo:** Manish Hatwalne (December 2024)

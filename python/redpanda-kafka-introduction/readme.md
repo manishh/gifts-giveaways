@@ -20,7 +20,7 @@ This demo code is provided _"as-is"_ to accompany the tutorial **Introduction to
 Follow these steps to run the Kafka Streaming Application demo:
 
 1. **Set up a Python environment**  
-   - Create a virtual environment.  
+   - Create a [virtual environment](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#create-and-use-virtual-environments).  
    - Install the required library:  
      ```bash
      pip install kafka-python

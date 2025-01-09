@@ -4,7 +4,7 @@ This demo code is provided _"as-is"_ to accompany the tutorial **Introduction to
 
 ### Prerequisites
 
-- The Python scripts assume Kafka and Zookeeper are running in Docker containers. Use the provided `docker-compose.yml` file to set them up.
+- The Python scripts assume Kafka (with Zookeeper o KRaft) is running in Docker containers. Use the provided `docker-compose.yml` file to set them up.
 - The following Python files are included as examples:
 
   1. **`producer.py`**  
@@ -13,18 +13,9 @@ This demo code is provided _"as-is"_ to accompany the tutorial **Introduction to
   2. **`consumer.py`**  
      A minimal Kafka consumer that connects to Kafka on `localhost:9092` and reads messages from the topic `orders`.
 
-  3. **`order_producer.py`**  
-     A Kafka producer that generates "orders" for a streaming application, sending them to the topic `input_orders`.
-
-  4. **`streaming_application.py`**  
-     Demonstrates a Kafka streaming application by:
-     - Continuously reading messages from the topic `input_orders`.
-     - Processing the messages (by appending `- processed` to each order).
-     - Sending the processed data to the topic `processed_orders`.
-
 ---
 
-## Usage Instructions for Kafka Streaming Application
+## Running Kafka Producer and Consumer
 
 Follow these steps to run the Kafka Streaming Application demo:
 
@@ -36,19 +27,19 @@ Follow these steps to run the Kafka Streaming Application demo:
      ```
    - Use this virtual environment to run the demo scripts.
 
-2. **Run the Streaming Application**  
-   Start the Kafka streaming application by executing:  
+2. **Running Kafka Consumer**  
+   Run sample Kafka consumer by executing:  
    ```bash
-   python streaming_application.py
+   python consumer.py
    ```  
-   This script will act as a consumer, reading messages from the topic `input_orders`.
+   This script will read messages from the topic `orders` until interrupted by `CTRL+C`.
 
-3. **Generate Input Orders**  
-   Produce test data for the streaming application by running:  
+3. **Running Kafka Producer**  
+   Produce test data for the consumer by running:  
    ```bash
-   python order_producer.py
+   python producer.py
    ```  
-   This script will create 10 sample "orders" and send them to the topic `input_orders`.  
+   This script will create 10 sample "orders" and send them to the topic `orders`.  
    *Tip:* You can modify the script to generate more orders for a longer demo.
 
 ---

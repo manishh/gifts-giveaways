@@ -3,19 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Manish Hatwalne">
     <title>Mailgun: Abandoned Cart Notification</title>
     <style>
-        /*
-        :root {
-            --primary: #4a6fa5;
-            --secondary: #166088;
-            --light: #f8f9fa;
-            --dark: #343a40;
-            --success: #28a745;
-            --danger: #dc3545;
-            --warning: #ffc107;
-        }
-        */
         :root {
             --primary: #eb5454;
             --secondary: #ef6c6c;
@@ -380,7 +370,7 @@
                         <div id="userEmail" style="font-size: 0.8rem;">john.smith@example.com</div>
                     </div>
                 </div>
-                <div class="cart-icon" id="cartIcon">
+                <div class="cart-icon" id="cartIcon" title="Your Cart">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="9" cy="21" r="1"></circle>
                         <circle cx="20" cy="21" r="1"></circle>
@@ -436,7 +426,7 @@
     <script>
         // Configuration: Replace these with your own values
         const USER_NAME = "Manish";
-        const USER_EMAIL = "manish@draft.dev";
+        const USER_EMAIL = "manish@example.com";   // Verified email for Mailgun-Sandbox account
 
         const BACKEND_URL = 'http://localhost:5000/abandoned-cart'; // Update to your Flask API endpoint, if needed.
         let ABANDONED_CART_TIMEOUT = 60; // Default timeout in seconds
@@ -772,7 +762,8 @@
                 user: userData,
                 items: cart,
                 totalValue: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
-                timestamp: new Date().toISOString()
+                timestamp: new Date().toISOString(),
+                timezoneOffset: new Date().getTimezoneOffset()   // Capture user's timezone  for backend
             };
             
             // Send abandoned cart data to backend

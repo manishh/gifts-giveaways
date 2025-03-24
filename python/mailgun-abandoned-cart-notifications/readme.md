@@ -1,6 +1,6 @@
 # Mailgun Abandoned Cart Notifications
 
-**Author:** [Manish Hatwalne](https://github.com/manishh)
+**Author:** [Manish Hatwalne](https://www.mailgun.com/blog/author/manish-hatwalne/)
 
 This project demonstrates how to implement an abandoned cart email workflow using Mailgun. It includes a Flask-based backend that processes abandoned cart data, generates HTML email templates, and sends notification emails via the Mailgun API.
 

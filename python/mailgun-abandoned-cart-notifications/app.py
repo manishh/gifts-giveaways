@@ -94,7 +94,7 @@ def _generate_abandoned_cart_email(cart_data: Dict[str, Any]) -> str:
         
         # Format timestamp if available
         timestamp_str = cart_data.get('timestamp', '')
-        timezone_offset = cart_data.get('timezoneOffset', 0)   # Ensure to represent user's timezone
+        timezone_offset = cart_data.get('timezoneOffset', 0)   # Represent user's timezone
         if timestamp_str:
             try:
                 timestamp = datetime.datetime.fromisoformat(timestamp_str.replace('Z', '+00:00')) - datetime.timedelta(minutes=timezone_offset)

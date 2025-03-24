@@ -40,7 +40,7 @@ def abandoned_cart():
         # Log the received data
         logger.info(f"Abandoned cart received from {user_email} at {datetime.datetime.now()}, Total items: {len(cart_data.get('items', []))}")
         
-        # send email about the abandoned cart
+        # Send email about the abandoned cart
         html_message = _generate_abandoned_cart_email(cart_data)
         _send_email(f"{user_info.get('name', user_email)} <{user_email}>", "Your cart is waiting...", html_message)
                 
@@ -94,7 +94,7 @@ def _generate_abandoned_cart_email(cart_data: Dict[str, Any]) -> str:
         
         # Format timestamp if available
         timestamp_str = cart_data.get('timestamp', '')
-        timezone_offset = cart_data.get('timezoneOffset', 0)   # Represent user's timezone
+        timezone_offset = cart_data.get('timezoneOffset', 0)   # Represent the user's timezone
         if timestamp_str:
             try:
                 timestamp = datetime.datetime.fromisoformat(timestamp_str.replace('Z', '+00:00')) - datetime.timedelta(minutes=timezone_offset)

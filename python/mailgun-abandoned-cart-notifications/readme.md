@@ -12,7 +12,7 @@ This project demonstrates how to implement an abandoned cart email workflow usin
 
 2. **Python 3.8** or higher installed on your machine.
 
-3. Some familiarity with **HTML** and **JavaScript** to understand the UI code.
+3. Familiarity with **HTML** and **JavaScript** to understand the UI code.
 
 ## Setup Instructions
 

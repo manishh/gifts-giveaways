@@ -4,7 +4,7 @@
 
 This project demonstrates how to implement an abandoned cart email workflow using Mailgun. It includes a Flask-based backend that processes abandoned cart data, generates HTML email templates, and sends notification emails via the Mailgun API.
 
-
+![Mailgun: Trigger Abandoned Cart](https://i.imgur.com/Qos5lQa.png)
 
 ## Prerequisites
 

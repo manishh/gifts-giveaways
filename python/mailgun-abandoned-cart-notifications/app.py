@@ -20,8 +20,7 @@ logger = logging.getLogger(__name__)
 
 # Initialize Flask app
 app = Flask(__name__, static_folder='images')
-CORS(app)  # Enable CORS to allow requests from your frontend
-
+CORS(app, resources={r"/*":{"origins":"*"}})  # Allow CORS for all routes & origins. Avoid in production.
 
 @app.route('/abandoned-cart', methods=['POST'])
 def abandoned_cart():
@@ -190,4 +189,4 @@ def shopping_cart():
 
 if __name__ == '__main__':
     logger.info("Starting Abandoned Cart Notification server...")
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(port=5000, debug=True)  # remove "debug" for production

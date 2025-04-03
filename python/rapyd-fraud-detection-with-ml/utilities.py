@@ -64,6 +64,8 @@ def create_headers(http_method, url,  body=None):
 def make_request(method,path,body=''):
     body, headers = create_headers(method, base_url + path, body) # JSON body goes here. Always empty string for GET; 
     # pprint(f"Request Headers: {headers}\n\n\Body: {body}")
+    headers['content-type'] = 'application/json'
+    
     if method == 'get':
         response = requests.get(base_url + path,headers=headers)
     elif method == 'put':

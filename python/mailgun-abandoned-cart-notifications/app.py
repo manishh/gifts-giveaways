@@ -63,14 +63,14 @@ def _send_email(to_address: str, subject: str, html_message: str):
     :param subject:
     :param message:
     """
-    api_key = os.getenv("MAILGUN_API_KEY")  # Get API-Key from the `.env` file
+    api_key = os.getenv("MAILGUN_API_KEY")  # Get API Key from the `.env` file
 
     resp = requests.post(MAILGUN_API_URL, auth=("api", api_key),
                             data={"from": FROM_EMAIL_ADDRESS,
                                 "to": to_address, "subject": subject, "html": html_message})
-    if resp.status_code == 200:  # success
+    if resp.status_code == 200:  # Success
         logging.info(f"Successfully sent an email to '{to_address}' via Mailgun API.")
-    else:   # error
+    else:   # Error
         raise RuntimeError(f"Could not send the email, reason: {resp.text}")     
 
 

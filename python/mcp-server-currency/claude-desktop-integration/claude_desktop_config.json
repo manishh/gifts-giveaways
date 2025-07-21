@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "currency": {
+      "command": "/absolute-path-to-executable/uv",
+      "args": [
+	"--directory",
+	"/absolute-path-to/mcp-server-currency",
+        "run",       
+        "currency.py"
+      ],
+      "env": {
+	"CURRENCY_API_KEY": "<your-API-key>"
+      }
+    }
+  }
+}

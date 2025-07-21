@@ -1,0 +1,10 @@
+[project]
+name = "mcp-server-currency"
+version = "0.1.0"
+description = "MCP Tools for Currency Conversion"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.10.1",
+]

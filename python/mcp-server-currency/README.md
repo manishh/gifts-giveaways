@@ -41,7 +41,7 @@ uv add "mcp[cli]" httpx python-dotenv
 
 ## Download Code
 
-- Download or  copy all the code from this Github repo to your project directory: `mcp-server-currency`
+- Download or  copy all the code from [this Github repo](https://github.com/manishh/gifts-giveaways/tree/master/python/mcp-server-currency) to your project directory: `mcp-server-currency`
 
 
 ## Run the Server

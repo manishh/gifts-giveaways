@@ -87,6 +87,10 @@ Ensure you have [Claude Desktop](https://claude.ai/download) available on your c
 
 > **Note:** You will be able to use locally running MCP server with Claude's free plan as well.
 
+## Currency MCP Server In Action:
+
+![Demo: Currency Conversion MCP Tool in action at Wimbledon](https://i.postimg.cc/xCxKHW39/wimbledon-currency-conversion.png)
+
 
 ---
 

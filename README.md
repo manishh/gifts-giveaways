@@ -2,7 +2,7 @@
 
 These are gifts. Take what you like, but please cite the source when you use it.
 
-> As of January 2025, this repository primarily contains code samples associated with various [tutorials and articles](https://reclusivecoder.com/manish-hatwalne/writings.php) that I have written.
+> As of September 2025, this repository primarily contains code samples associated with various [tutorials and articles](https://reclusivecoder.com/manish-hatwalne/writings.php) that I have written.
 
 ### Disclaimer
 
@@ -13,3 +13,5 @@ This code is for educational and research purposes only. It should not be used i
 If you use this code, please cite the author in your work.
 
 ---
+
+Copyright &copy 2025, Manish Hatwalne.
